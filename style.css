@@ -277,6 +277,10 @@ h3 {
   color: var(--color-white);
 }
 
+.map picture img{
+  width: 100%;
+}
+
 /*----------------
   Media Queries
 -----------------*/
