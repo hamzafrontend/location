@@ -1,0 +1,445 @@
+/*---------------------
+  Universal CSS
+-----------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Big Shoulders Display", sans-serif;
+}
+
+/* if we didnot use this we will not be able to center the card verically. */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  /* same as max-width: 100%; but its a logical property */
+  max-inline-size: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*------------------
+  Custom Elements
+-------------------*/
+
+p {
+  line-height: 1.7;
+  font-size: 18px;
+  color: var(--color-gray);
+  font-family: "Outfit", sans-serif;
+  margin-block-start: 1.5em;
+  font-weight: 300;
+  max-inline-size: 60ch;
+  text-wrap: pretty;
+}
+
+.first-line {
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+/*---------------
+  Colors
+----------------*/
+
+:root {
+  --color-brown: hsl(24, 56%, 63%);
+  --color-black: hsl(0, 0%, 8%);
+  --color-gray: hsl(0, 0%, 27%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+/*--------
+  Body
+--------*/
+
+.container,
+.hero-container {
+  width: 90%;
+  margin-inline: auto;
+  max-width: 1250px;
+}
+
+.spacing-top {
+  margin-block-start: 8em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-block-start-1em {
+  margin-block-start: 1em;
+}
+
+.margin-block-start-2em {
+  margin-block-start: 2em;
+}
+
+.hero-content {
+  display: inline-block;
+}
+
+.btn-group {
+  display: inline-flex;
+  margin-block-start: 1.5em;
+  font-size: 20px;
+}
+
+.btn {
+  color: var(--color-white);
+  text-transform: uppercase;
+  background-color: var(--color-black);
+  padding: 1em 1.6em;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  transition: all ease 0.5s;
+}
+
+.btn-arrow {
+  background-color: var(--color-brown);
+  padding: 1em 1em;
+  transition: all ease 0.5s;
+}
+
+.btn-back {
+  margin-block-start: unset;
+  position: absolute;
+  top: 0;
+}
+
+.btn-group:hover .btn {
+  background-color: var(--color-brown);
+}
+
+.btn-group:hover .btn-arrow {
+  background-color: var(--color-black);
+}
+
+.day-at-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.day-at-section-content p {
+  max-inline-size: 45ch;
+}
+
+.gallery-grid-items {
+  margin-block-start: 3em;
+  display: grid;
+  /* grid-auto-columns: 1fr; */
+  grid-template-columns: 1fr;
+  gap: 1em;
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
+}
+
+.gallery-grid-item:nth-child(1) {
+  grid-area: one;
+}
+
+.gallery-grid-item:nth-child(2) {
+  grid-area: two;
+}
+
+.gallery-grid-item:nth-child(3) {
+  grid-area: three;
+}
+
+.inspire-card {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2.5em 1.5em;
+}
+
+.inspire-card p {
+  color: var(--color-white);
+  font-weight: 200;
+}
+
+.footer {
+  background-color: var(--color-black);
+  padding-block: 3em;
+}
+
+.footer-brown{
+  background-color: var(--color-brown);
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.footer-brown .footer-icons svg:hover path {
+  fill: var(--color-white);
+}
+
+.footer-icons svg:hover path {
+  cursor: pointer;
+  fill: var(--color-brown);
+}
+
+.footer-text {
+  color: var(--color-white);
+  font-size: 16px;
+  margin-block-start: 0em;
+}
+
+.footer-brown .footer-text {
+  color: var(--color-black);
+}
+
+.map {
+  position: relative;
+}
+
+.address-section {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-block: 3em;
+}
+
+.address-sub-heading {
+  color: var(--color-brown);
+  margin-block-start: 1.5em;
+}
+
+.address-list li {
+  line-height: 1.7;
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+}
+
+.location-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-section p {
+  color: var(--color-white);
+}
+
+/*----------------
+  Media Queries
+-----------------*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .hero-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-section-content {
+    max-width: fit-content;
+    position: absolute;
+    left: 25em;
+    right: 2em;
+  }
+
+  p {
+    max-inline-size: 40ch;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+
+  .day-at-section {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* .day-at-section-content p{
+    inline-size: 100%;
+    min-inline-size: 350px;
+    max-inline-size: 550px;
+  } */
+
+  .gallery-grid-items {
+    margin-block-start: 1em;
+    grid-template-columns: 2fr 1.4fr;
+    grid-template-areas:
+      "one two"
+      "one three";
+  }
+
+  .inspire-card {
+    padding: 5em 1.5em;
+  }
+
+  .footer-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    max-inline-size: 30ch;
+    text-wrap: pretty;
+  }
+
+  .location-section{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .location-section h2{
+    font-size: 55px;
+  }
+
+  .address-sub-heading {
+    margin-block-start: unset;
+  }
+
+
+
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 900px;
+  }
+
+  /* .address-section .container {
+    max-width: 1100px;
+  } */
+
+  .hero-section {
+    align-items: flex-start;
+  }
+
+  .hero-section-content {
+    padding-block-start: 10em;
+    display: flex;
+    left: 0;
+    right: 0;
+    gap: 14em;
+  }
+
+  .hero-section-content h1 {
+    mix-blend-mode: difference;
+  }
+
+  p {
+    /* max-inline-size: 24ch; */
+    font-size: 22px;
+  }
+
+  h1 {
+    max-inline-size: 10ch;
+    font-size: 96px;
+    color: var(--color-white);
+  }
+
+  h2 {
+    font-size: 60px;
+    max-inline-size: 10ch;
+  }
+
+  .first-line {
+    display: inline;
+  }
+
+  .hero-content p {
+    max-inline-size: 24ch;
+    margin-block-start: unset;
+  }
+
+  picture {
+    display: inline-flex;
+  }
+
+  .map picture {
+    display:unset;
+  }
+
+  .hero-section-picture::before {
+    content: "";
+    width: 38vw;
+    /* max-width: 650px; */
+    background-color: var(--color-black);
+    display: inline-block;
+  }
+
+  .day-at-section-content p {
+    width: 100%;
+    min-width: 350px;
+    max-width: 550px;
+  }
+
+  .gallery-grid-items {
+    margin-block-start: 1.5em;
+    grid-template-columns: 2.5fr 2fr;
+    gap: 1.5em;
+  }
+
+  .footer-text {
+    max-inline-size: 40ch;
+  }
+
+  .address-list li {
+    font-size: 22px;
+  }
+}
